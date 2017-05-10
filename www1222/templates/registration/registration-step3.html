@@ -1,0 +1,170 @@
+<ion-view title="registration-step3" id="registration-statup-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <ion-list id="registration-statup3">
+      <p>1. water /telephone /electricity bill/statement of running bank account/Income Tax Assessment Order </p>
+      <p>2. Election Commission ID card, Gas connection Bill, Spouse's</p>
+      <ul class="payment-option">
+        <li>
+          <div class="heading">
+            <h2>1. Online Payment Options</h2>            
+          </div>
+          <div class="heading-content">
+            <p>AMOUNT:4000</p>
+            <label class="item item-radio text-fill" id="radio-netbanking ">
+              <input type="radio" name="radio-payment" value="on">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>Net Banking</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-debitcard">
+              <input type="radio" name="radio-payment">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>Debit Card</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-creditcard">
+              <input type="radio" name="radio-payment">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>Credit Card</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-platinum">
+              <input type="radio" name="radio-payment">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>Platinum</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <button id="pay-online" class="button button-positive pay-online">Pay Online</button>
+          </div>
+        </li>
+        <li>
+          <div class="heading">
+            <h2>2. "I Have Paid" Request</h2>            
+          </div>
+          <div class="heading-content">
+            <p>I have made a Payment by</p>
+            <label class="item item-radio text-fill" id="radio-check">
+              <input type="radio" name="radio-paid" value="on">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>Cheque</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-cash">
+              <input type="radio" name="radio-paid">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>Cash</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-neft">
+              <input type="radio" name="radio-paid">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>NEFT/RTGS</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <label class="item item-radio text-fill" id="radio-upi">
+              <input type="radio" name="radio-paid">
+              <div class="radio-content">
+                <div class="item-content disable-pointer-events" ng-transclude="">
+                  <span>UPI</span>
+                </div>
+                <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+              </div>
+            </label>
+            <div class="list">              
+              <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="claim-number">
+                  <input type="text" placeholder="Claim Request Number" name="fname" data-ng-model="userVO.fname" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200010}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="bank-name">
+                  <input type="text" placeholder="Bank Name" name="fname" data-ng-model="userVO.fname" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200010}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="reference-no">
+                  <input type="text" placeholder="Reference No." name="fname" data-ng-model="userVO.fname" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200010}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="paid-amount">
+                  <input type="text" placeholder="Amount" name="fname" data-ng-model="userVO.fname" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200010}}
+                    </small>
+                </div>
+              </div>
+              <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
+                <label class="item item-input item-floating-label text-fill" id="payment-date">
+                  <input type="text" placeholder="Payment Date (DD/MM/YYYY)" name="fname" data-ng-model="userVO.fname" required>
+                </label>
+                <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
+                    <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
+                     {{registration.famMessages.ERROR.M200010}}
+                    </small>
+                </div>
+              </div>              
+              <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">  
+                <label class="item-stacked-label select-box" id="additional-information">
+                  <div class="lebel-head">Additional Information</div>
+                    <textarea placeholder=""></textarea>
+                    <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
+                      <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
+                       {{registration.famMessages.ERROR.M200013}}
+                      </small>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <button id="submit_payment" class="button button-positive pay-online">Submit</button>
+        </li>
+      </ul>     
+      
+    </ion-list>
+    <div class="button-set">
+      <button id="previous" class="button button-positive previous" ui-sref="registration_step2">Previous</button>
+      <button id="next" class="button button-positive next" ui-sref="registration_step4">Next</button>
+    </div>
+  </ion-content>
+</ion-view>

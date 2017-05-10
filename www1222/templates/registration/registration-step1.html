@@ -1,0 +1,63 @@
+<ion-view title="registration-step3" id="registration-step3-page" hide-nav-bar="true">
+  <ion-content padding="true" style="background: url(img/YLljt9sHQZuoOVeWmWEj_login-screen-bg.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/o2pDWacJRbK5dTh1vP32_login-screen-logo.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <ion-list id="registration-statup1">
+      <div class="form-group"  data-ng-class="{ 'has-error': (registration_step1.registrationFormLocation.location.$error.required) && (!registration_step1.registrationFormLocation.location.$pristine) ||  registration_step1.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="registetion-service-location">
+          <select name="location" ng-model="userVO.location" 
+               ng-options="option.id as option.optionValue for option in registration_step1.userSex" ng-init="userVO.location=''" required>         
+              <option value=''>Select Service Location</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration_step1.registrationFormLocation.location.$invalid || registration_step1.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step1.registrationFormLocation.location.$error.required && !registration_step1.registrationFormLocation.location.$pristine || registration_step1.submitted">
+               {{registration_step1.famMessages.ERROR.M200021}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group" name="registration_step1.registrationForm" data-ng-class="{ 'has-error': (registration_step1.registrationForm.serviceCenter.$error.required) && (!registration_step1.registrationForm.serviceCenter.$pristine) || registration_step1.submitted }">  
+        <label class="item item-select item-stacked-label select-box" id="registetion-service-center">
+          <select name="serviceCenter" ng-model="userVO.serviceCenter" 
+               ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.serviceCenter=''">         
+              <option value=''>Select Cervice Center</option>
+          </select>
+            <div class="help-block_cont" data-ng-show="registration_step1.registrationForm.serviceCenter.$invalid ||  registration_step1.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step1.registrationForm.serviceCenter.$error.required && !registration_step1.registrationForm.serviceCenter.$pristine || registration_step1.submitted">
+               {{registration_step1.famMessages.ERROR.M200022}}
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="form-group"  data-ng-class="{ 'has-error': (registration_step1.registrationFormAddress.locationAddress.$error.required) && (!registration_step1.registrationFormAddress.locationAddress.$pristine) || registration_step1.submitted }">  
+        <label class="item-stacked-label select-box" id="registetion-service-center">
+          <div class="lebel-head">LOCATION ADDRESS</div>
+            <textarea name="locationAddress"  ng-model="userVO.locationAddress" placeholder="" ng-init="userVO.locationAddress==''" ></textarea>
+            <div class="help-block_cont" >
+              <small class="help-block inline-error" data-ng-show="registration_step1.registrationFormAddress.locationAddress.$error.required && !registration_step1.registrationFormAddress.locationAddress.$pristine  || registration_step1.submitted">
+               {{registration_step1.famMessages.ERROR.M200023}}
+              </small>
+			  
+			
+          </div>
+        </label>
+      </div>
+      <div class="form-group" data-ng-class="{ 'has-error': (registration_step1.registrationFormCenterAddress.centerAddress.$error.required) && (!registration_step1.registrationFormCenterAddress.centerAddress.$pristine) || registration_step1.submitted }">  
+        <label class="item-stacked-label select-box" id="registetion-service-center">
+          <div class="lebel-head">CENTER ADDRESS</div>
+            <textarea name="centerAddress"  ng-model="userVO.centerAddress" placeholder="" ng-init="userVO.centerAddress=''" required></textarea>
+            <div class="help-block_cont" data-ng-show="registration_step1.registrationFormCenterAddress.centerAddress.$invalid || registration_step1.submitted">
+              <small class="help-block inline-error" data-ng-show="registration_step1.registrationFormCenterAddress.centerAddress.$error.required && !registration_step1.registrationFormCenterAddress.centerAddress.$pristine || registration_step1.submitted">
+               {{registration_step1.famMessages.ERROR.M200024}}
+              </small>
+          </div>
+        </label>
+      </div>
+    </ion-list>
+    <div class="button-set">
+        <button id="previous" class="button button-positive previous" ui-sref="registration_statup">Previous</button>
+        <button id="next" class="button button-positive next" data-ng-click="registration_step1.onsubmit(userVO)">Next</button>
+      </div>
+  </ion-content>
+</ion-view>

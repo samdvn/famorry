@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-
-    <link rel="stylesheet" href="fonts/opensans/css/fonts.css">
+	 <link rel="stylesheet" href="fonts/opensans/css/fonts.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+   
 	<link href="lib/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
     
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -56,7 +58,7 @@
       #login-list2 input{padding-left: 36px;} 
       #login-list2 .item-icon-left .icon{font-size: 20px; left: 0;}
       .not-member span{color: #fff; text-decoration: underline;}
-      .item-select.item-stacked-label select{border-bottom: solid 1px #4b6c76; width: 100%; padding-left: 2px; padding-right: 6px; max-width: 100%;background: transparent; color: #fff;}
+      .item-select.item-stacked-label select{border-bottom: solid 1px #4b6c76; width: 100%; padding-left: 2px; padding-right: 6px; max-width: 100%;background: transparent; color: #aaa;}
       .item-select.item-stacked-label{padding: 5px 0;border: 0;}
       .chk-box.item-stacked-label{border:0px; border-bottom: solid 1px #4b6c76; color: #fff;}
       #registration .has-error .item{border-left: 0; border-top: 0; border-right: 0;}
@@ -64,19 +66,110 @@
       .verification-mgs p{text-align: center; color: #fff;}
       #dosignup input {padding-left: 50px;}
       #registration-statup .item{}
-      .lebel-head{color: #fff;}
+      .lebel-head{color: #aaa;}
       .service-container{margin-top: 40px;}
       .service-container-list{margin-bottom: 20px;}
-      .service-container-head{border-color: rgba(255, 255, 255, 0.3); background-color: #2574ab; color: #fff; text-transform: uppercase;padding: 10px 20px; font-weight: bold;}
-      .service-container-content{color: rgba(19, 59, 87, 0.8);background-color: #d8eaf7; padding: 10px 20px;}
-      .heading{}
+      .service-container-head{overflow: hidden; border-color: rgba(255, 255, 255, 0.3); background-color: #2574ab; color: #fff; text-transform: uppercase;padding: 10px 20px; font-weight: bold;}
+      .service-container-content{overflow: hidden; color: rgba(19, 59, 87, 0.8);background-color: #d8eaf7; padding: 10px 20px;}
+      .heading{position: relative;}
+      .heading:after, .heading:before{content: ""; display: block; clear: both; overflow: hidden; height: 0; line-height: 0; font-size: 0;}
       .heading h2{color: #fff; font-size: 16px;}
       #registration-statup1 .form-group{margin-bottom: 20px;}
-      .form-group textarea{border: solid 1px #4b6c76;background: transparent;color: #fff;width: 100%;    resize: none;height: 100px;margin-top: 10px; padding: 10px;}
+      .form-group textarea{border: solid 1px #4b6c76;background: transparent;color: #fff;width: 100%; resize: none;height: 60px;margin-top: 10px; padding: 10px;}
       .service-container-content.odd{background-color: #cce4f5;}
-      .service-container-list ul li{margin-bottom: 30px;}
+      .service-container-list ul li{margin-bottom: 15px;}
       #registration-statup3 p{color: #fff;}
       .upload-label{color: #fff;}
+      .icon.cercle:before {display: block;width: 40px;height: 40px;line-height: 40px;text-align: center;border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%;background: #fff; color: #353e50;}
+      .tab-outer{border-bottom: solid 5px #fff;}
+      .tab-outer button.tab{border-left: solid 1px #79f2ce;}
+      .tab-outer button.ion-cube.tab{border-left: 0;}
+      .header-top{background: #009fe3; padding: 0 5px; width: 100%;float: left;}
+      .header-top:after, .header-top:before{content: ""; display: inline-block; clear: both; overflow: hidden; height: 0; line-height: 0; font-size: 0;}
+      .header-top .logo-outer{float: left;}
+      .header-top .header-icon{float: right;}
+      .link{margin-top: 10px;}
+      .link li{display: inline-block; vertical-align: middle;}
+      .balance-heading{}
+      .balance-heading:after{}
+      .button-link{background: transparent; font-size: 20px;color: #fff; border: 0; margin-left: 5px;}
+      .ion-ios-person.button-link{font-size: 26px;}
+      .ion-ios-rupice.button-link{background: #5ebfe8;padding: 0 10px;font-size: 14px;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+      .outer-balance{}
+      .outer-balance .inner-balance{background: #009fe3; padding: 15px;}
+      .balance-heading{}
+      .balance-heading-text{font-size: 25px; display: inline-block;width: 60%;line-height: 25px; color: #fff;}
+      .balance-heading-price{display: inline-block; font-size: 50px; color: #fff; font-weight: normal;}
+      .outer-balance ul{}
+      .outer-balance ul li{font-size: 14px;margin-bottom: 5px; text-transform: uppercase; color: #fff;}
+      .outer-balance .list h2{color: #90d9f8; font-weight: bold; font-size: 18px; text-transform: uppercase;}
+      .balance-horz{}
+      .balance-horz li{clear: both; overflow: hidden;}
+      .balance-horz li .balance-horz-head{width: 90%; float: left;}
+      .balance-horz li .balance-horz-con{}
+      .balance-vertical{overflow: hidden;}
+      .balance-vertical li{text-align: center;width: 25%;float: left;overflow: hidden;}
+      .balance-vertical li .balance-horz-head{}
+      .balance-vertical li .balance-horz-con{}
+      #registration-step4 h2{font-size: 16px; color: #fff;}
+
+      .service-fund-inn{margin-top: 20px;}
+      .service-fund-inn ul{}
+      .service-fund-inn ul li{margin-bottom: 15px;}
+      .service-fund-head{border-color: rgba(255, 255, 255, 0.3); background-color: #2574ab;color: #fff; text-transform: uppercase;padding: 10px 20px;font-weight: bold;}
+      .service-fund-content{color: rgba(19, 59, 87, 0.8); background-color: #d8eaf7; padding: 10px 20px;}
+      .service-fund-content.odd{background-color: #cce4f5;}
+      .service-fund-content .tittle-head{text-transform: uppercase; font-weight: 700;}
+      .headding{margin-bottom: 20px; margin-top: 20px;}
+      .headding h2{text-transform: uppercase; color: #fff; font-size: 16px;}
+      .button-link{background-color: #43d9ad; margin-left: 0;height: 30px; line-height: 30px; display: inline-block; padding: 0 12px;}
+      .tittle-content{margin-top: 10px;}
+
+      .list .item.item-accordion {
+        line-height: 38px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        transition: 0.09s all linear;
+      }
+      .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+      }
+      .list .item.item-accordion.ng-hide-add,
+      .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+      }
+      .fund-outer .item{background: transparent;}
+      .radio-content{color: #aaa; font-size: 14px;}
+      .item-half{width: 50%; float: left; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+      .balance-price{font-size: 20px;display: inline-block;vertical-align: top;}
+      .profile-img{}
+      .profile-img img{max-width: 60px; max-height: 60px;}
+      .header-back{margin: -20px;padding: 10px 20px;background-color: #2574ab; color: #fff;}
+      .header-back .back{background: transparent;border: 0;color: #fff;font-size: 18px;margin-right: 5px; line-height: 16px;}
+      .profile-head{color: #fff;margin-bottom: 25px;}
+      .profile-head .profile-img{display: inline-block; vertical-align: middle; margin-right: 20px;}
+      .profile-head .profile-name{display: inline-block; vertical-align: middle;}
+      .profile-head .profile-name p{margin-bottom: 2px;font-size: 16px;}
+      .profile-head .profile-name a{color: #9fa8bc; text-decoration: none; font-size: 12px;}
+      .profile-form ul{}
+      .profile-form ul li{padding: 10px;border-bottom: solid 1px #193c54;color: #dedede;font-size: 13px;}
+      .profile-form ul li a{color: #dedede; text-decoration: none; font-size: 13px;}
+      .profile-form h4{text-transform: uppercase; color: #43d9ad;font-weight: normal;font-size: 15px;}
+      .profile-first, .profile-second{margin-bottom: 40px;}
+      .add-new{float: right; clear: both;}
+      .glyphicon-picture:before {content: "\e060";}
+      .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+    .profile-form ul li span{color: #5bc0de;}
 
 
     </style>

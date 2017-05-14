@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     angular
@@ -11,7 +11,7 @@
                 "M100004": "DEMO collects personally identifying information and data about individuals, their company, and the companies demographics “personally identifying information and data” including (i) when you provide information to DEMO, such as when you register or sign up for any of our products such as, but not limited to, events, conferences, on-line seminars contests, RSS Feeds, webcasts, and other communications with DEMO; (ii) when you register or sign up on any DEMO site, your information will be known to DEMO; and (iii) from time to time we may add other information that we collect from third party sources to enhance the information that you provided to DEMO.",
             },
             "ERROR": {
-                "M200001": "Unable to save data",                
+                "M200001": "Unable to save data",
                 "M200002": "Please enter userID",
                 "M200003": "Please enter valid email address",
                 "M200004": "Please enter password",
@@ -31,36 +31,41 @@
                 "M200018": "Please enter valid Phone number",
                 "M200019": "Verification doesn't match",
                 "M200020": "Verification code is required",
-				"M200021": "Please select your service location",
-				"M200022": "Please select your service center",
-				"M200023": "Please enter your location address",
-				"M200024": "Please enter your center address",
-				"M200025": "You entered a wrong verification code",
-				"M200026": "Please select the mode of payment",
-				"M200027": "Please enter request number",
-				"M200028": "Please enter bank name",
-				"M200029": "Please enter reference number",
-				"M200030": "Please enter amount",
-				"M200031": "Please select date",
-				"M200032": "Flat number is required",
-				"M200033": "Premises/Building/Village address is required",
-				"M200034": "Road/Street/P.O is required",
-				"M200035": "Area is required",
-				"M200036": "Country is required",
-				"M200037": "State is required",
-				"M200038": "Town is required",
-				"M200039": "Pincode is required",
-				"M200040": "Mobile Number is required",
-				"M200041": "Please Accept Terms And Condition",
-				"M200042": "You are already a registered member with Phone Number 1111111111, Please login 		through your credential",
-				"M200043": "Something Went Wrong,Try again After Sometime",
-				"M200044": "Enter the verification code here",
-				"M200045": "Please don't modify location address",
-				"M200046": "Please don't modify service address",
-				"M200047": "Please enter a valid pincode"
-				
-				
-				
+                "M200021": "Please select your service location",
+                "M200022": "Please select your service center",
+                "M200023": "Please enter your location address",
+                "M200024": "Please enter your center address",
+                "M200025": "You entered a wrong verification code",
+                "M200026": "Please select the mode of payment",
+                "M200027": "Please enter request number",
+                "M200028": "Please enter bank name",
+                "M200029": "Please enter reference number",
+                "M200030": "Please enter amount",
+                "M200031": "Please select date",
+                "M200032": "Flat number is required",
+                "M200033": "Premises/Building/Village address is required",
+                "M200034": "Road/Street/P.O is required",
+                "M200035": "Area is required",
+                "M200036": "Country is required",
+                "M200037": "State is required",
+                "M200038": "Town is required",
+                "M200039": "Pincode is required",
+                "M200040": "Mobile Number is required",
+                "M200041": "Please Accept Terms And Condition",
+                "M200042": "You are already a registered member with Phone Number 1111111111, Please login 		through your credential",
+                "M200043": "Something Went Wrong,Try again After Sometime",
+                "M200044": "Enter the verification code here",
+                "M200045": "Please don't modify location address",
+                "M200046": "Please don't modify service address",
+                "M200047": "Please enter a valid pincode",
+                "M200048": "This field is required",
+                "M200049": "This field is required",
+                "M200050": "This field is required",
+                "M200051": "This field is required",
+                "M200052": "This field is required"
+
+
+
             },
             "SUCCESS": {
                 "M300001": "Data saved successfully.",

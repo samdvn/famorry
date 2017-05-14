@@ -227,13 +227,13 @@
                 "": {
                     templateUrl: 'templates/profile/education-details.html',
                     controller: 'education_detailsCtrl',
-                    controllerAs: 'education_details'
+                    controllerAs: 'educationDetails'
                 }
             },
             resolve: {
                 loadScripts: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['js/profile/education_details/education_detailsCtrl.js'
-                        //'js/tester/login/loginService.js',
+                    return $ocLazyLoad.load(['js/profile/education_details/education_detailsCtrl.js',
+                        'js/profile/education_details/education_detailsService.js'
                         //'js/registration/loginDataService.js'
                     ]);
                 }]

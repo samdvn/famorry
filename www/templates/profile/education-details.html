@@ -63,7 +63,7 @@
                         <div class="form-group" data-ng-class="{ 'has-error': (educationDetails.education.qualification.$error.required) && (!educationDetails.education.qualification.$pristine) && educationDetails.submitted }">
                             <label class="item item-select item-stacked-label select-box" id="registetion-select1">
               <select name="qualification" ng-model="userVO.qualification" 
-                   ng-options="option.id as option.optionValue for option in registration.userSex" ng-init="userVO.qualification=''" required/>         
+                   ng-options="option.translate_value for option in educationDetails.qualifications" ng-init="userVO.qualification=''" required/>         
                   <option value=''>QUALIFICATION</option>
               </select>
                 <div class="help-block_cont" data-ng-show="educationDetails.education.qualification.$invalid && educationDetails.submitted">

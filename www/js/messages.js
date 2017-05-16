@@ -58,11 +58,16 @@
                 "M200045": "Please don't modify location address",
                 "M200046": "Please don't modify service address",
                 "M200047": "Please enter a valid pincode",
+                /* **15-05-17 ****** */
                 "M200048": "This field is required",
                 "M200049": "This field is required",
                 "M200050": "This field is required",
                 "M200051": "This field is required",
-                "M200052": "This field is required"
+                "M200052": "This field is required",
+                /* **15-05-17 ****** */
+                /* **16-05-17 ****** */
+                "M200053": "This field is required"
+                    /* **16-05-17 ****** */
 
 
 

@@ -22,30 +22,48 @@
             educationDetails.passingYear = education_detailsService.passingYear(eyear);
         };
         education_detailsService.GetUserQualification(function(response) {
-            console.log(response);
+            for (var i = 0; i < response.data.length; i++) {
+                educationDetails.qualifications.push(response.data[i]);
+            }
+
         });
 
         function onsubmit(data) {
-            // 	console.log(data)
+            console.log(data);
             educationDetails.submitted = true;
-            // 	if (login.loginForm.$valid) {
-            // 		login.formData = data;					
-            //         dataService.getUserData(login.formData,function (response) {
-            //         if (response && response.success == 'true') {
-            //             var token = login.formData.user+':'+response.token+':M';
-            //             userDetails.setUserDetails(token);
-            // 			//testerService.prepreNotifications(response.data.notifications);
-            //             $state.go(famConstants.STATE_USER.HOME);
-            //         } else {
-            //         	var alertVO = {};
-            //         	alertVO.title = famMessages.MESSAGE.M100002;
-            //         	alertVO.message = famMessages.ERROR.M200008;
-            //         	alertService.openModal(alertVO);
-            //             //login.showServerErrorMsg(response.errorCode);
-            //         }
+            var familyId = (!localStorage.getItem('familyId') ? '' : localStorage.getItem('familyId'));
+            var memberId = (!localStorage.getItem('memberId') ? '' : localStorage.getItem('memberId'));
+            var post_data = {
+                "familyID": familyId,
+                "memberID": memberId,
+                "qualification": data.qualification.translate_value,
+                "institute": data.institute,
+                "boardUniv": data.university,
+                "entryMonth": data.month,
+                "entryYear": data.eyear,
+                "passingMonth": data.pmonth,
+                "passingYear": data.pyear,
+                "divisionGrade": data.division,
+                "percentOfMarks": data.marks,
+                "gradePT": ""
+            };
 
-            //     });
-            // 	}
+
+
+            education_detailsService.PostEducationDetails(post_data, function(response) {
+                console.log(response);
+                if (response && response.success == 'true') {
+
+
+                } else {
+                    var alertVO = {};
+                    alertVO.title = famMessages.MESSAGE.M100002;
+                    alertVO.message = famMessages.ERROR.M200008;
+                    alertService.openModal(alertVO);
+                }
+
+            });
+
         }
         educationDetails.add = function() {
             educationDetails.clickAdd = 1;

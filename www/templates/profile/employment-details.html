@@ -5,9 +5,9 @@
         </div>
         <ion-list id="employment-details">
             <div class="heading">
-                <button id="add-new" class="button button-positive add-new">Add New</button>
+                <button id="add-new" class="button button-positive add-new" ng-if="employmentDetails.addButton==0" data-ng-click="employmentDetails.add()">Add New</button>
             </div>
-            <div class="service-fund-inn">
+            <div class="service-fund-inn" ng-if="details==1">
                 <div class="transaction-content">
                     <ul>
                         <li>
@@ -44,190 +44,78 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="service-fund-head">EMPLOYMENT DETAILS</div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">COMPANY</div>
-                                <div class="tittle-content">trrweyt</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">START DATE</div>
-                                <div class="tittle-content">09-Mar-2017</div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">LEAVE/ RETIREMENT DATE</div>
-                                <div class="tittle-content">05-Mar-2017</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">POSITION</div>
-                                <div class="tittle-content">eryre</div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">ORGANIZATION ADDRESS</div>
-                                <div class="tittle-content">gfjj</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">ORGANIZATION CONTACT</div>
-                                <div class="tittle-content"></div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">Action</div>
-                                <div class="tittle-content">
-                                    <a href="#" class="button-link"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-fund-head">EMPLOYMENT DETAILS</div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">COMPANY</div>
-                                <div class="tittle-content">gdwgw</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">START DATE</div>
-                                <div class="tittle-content">24-Mar-2017</div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">LEAVE/ RETIREMENT DATE</div>
-                                <div class="tittle-content">06-Mar-2017</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">POSITION</div>
-                                <div class="tittle-content">w4etewt</div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">ORGANIZATION ADDRESS</div>
-                                <div class="tittle-content">eryt</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">ORGANIZATION CONTACT</div>
-                                <div class="tittle-content"></div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">Action</div>
-                                <div class="tittle-content">
-                                    <a href="#" class="button-link"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="service-fund-head">EMPLOYMENT DETAILS</div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">COMPANY</div>
-                                <div class="tittle-content">TCS</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">START DATE</div>
-                                <div class="tittle-content">07-Mar-2017</div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">LEAVE/ RETIREMENT DATE</div>
-                                <div class="tittle-content">06-Mar-2017</div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">POSITION</div>
-                                <div class="tittle-content">ASE</div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">ORGANIZATION ADDRESS</div>
-                                <div class="tittle-content"></div>
-                            </div>
-                            <div class="service-fund-content odd">
-                                <div class="tittle-head">ORGANIZATION CONTACT</div>
-                                <div class="tittle-content"></div>
-                            </div>
-                            <div class="service-fund-content">
-                                <div class="tittle-head">Action</div>
-                                <div class="tittle-content">
-                                    <a href="#" class="button-link"><i class="fa fa-eye"></i></a>
-                                    <a href="#" class="button-link"><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="add-new-content">
-                <div class="service-fund-head">EDUCATION DETAILS</div>
-                <div class="service-fund-content">
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
-                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-              <input type="text" placeholder="ORGANIZATION NAME" name="fname" data-ng-model="userVO.fname" required>
+            <div class="add-new-content" ng-if="employmentDetails.clickAdd==1">
+                <div class="service-fund-head">EMPLOYMENT DETAILS</div>
+                <form id="professionalDetails_employment" name="employmentDetails.employment" class="list login-form" novalidate>
+                    <div class="service-fund-content">
+                        <div class="form-group" data-ng-class="{ 'has-error': (employmentDetails.employment.org_name.$error.required) && ( !employmentDetails.employment.org_name.$pristine) || employmentDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ORGANIZATION NAME" name="org_name" data-ng-model="userVO.org_name" required>
             </label>
-                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
-                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
-                 {{registration.famMessages.ERROR.M200010}}
+                            <div class="help-block_cont" data-ng-show="employmentDetails.employment.org_name.$invalid ||  employmentDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="employmentDetails.employment.org_name.$error.required && !employmentDetails.employment.org_name.$pristine || employmentDetails.submitted">
+                 {{employmentDetails.famMessages.ERROR.M200010}}
                 </small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
-                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-              <input type="text" placeholder="DESIGNATION" name="fname" data-ng-model="userVO.fname" required>
+                        <div class="form-group" data-ng-class="{ 'has-error': (employmentDetails.employment.designation.$error.required) && ( !employmentDetails.employment.designation.$pristine) || employmentDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="DESIGNATION" name="designation" data-ng-model="userVO.designation" required>
             </label>
-                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
-                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
-                 {{registration.famMessages.ERROR.M200010}}
+                            <div class="help-block_cont" data-ng-show="employmentDetails.employment.designation.$invalid ||  employmentDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="employmentDetails.employment.designation.$error.required && !employmentDetails.employment.designation.$pristine || employmentDetails.submitted">
+                 {{employmentDetails.famMessages.ERROR.M200010}}
                 </small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
-                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-              <input type="text" placeholder="START DATE" name="fname" data-ng-model="userVO.fname" required>
+                        <div class="form-group" data-ng-class="{ 'has-error': (employmentDetails.employment.s_date.$error.required) && ( !employmentDetails.employment.s_date.$pristine) || employmentDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="START DATE" name="s_date" data-ng-model="userVO.s_date" required>
             </label>
-                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
-                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
-                 {{registration.famMessages.ERROR.M200010}}
+                            <div class="help-block_cont" data-ng-show="employmentDetails.employment.s_date.$invalid ||  employmentDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="employmentDetails.employment.s_date.$error.required && !employmentDetails.employment.s_date.$pristine || employmentDetails.submitted">
+                 {{employmentDetails.famMessages.ERROR.M200010}}
                 </small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
-                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-              <input type="text" placeholder="END DATE" name="fname" data-ng-model="userVO.fname" required>
+                        <div class="form-group" data-ng-class="{ 'has-error': (employmentDetails.employment.e_date.$error.required) && ( !employmentDetails.employment.e_date.$pristine) || employmentDetails.submitted }">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="END DATE" name="e_date" data-ng-model="userVO.e_date" required>
             </label>
-                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
-                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
-                 {{registration.famMessages.ERROR.M200010}}
+                            <div class="help-block_cont" data-ng-show="employmentDetails.employment.e_date.$invalid ||  employmentDetails.submitted">
+                                <small class="help-block inline-error" data-ng-show="employmentDetails.employment.e_date.$error.required && !employmentDetails.employment.e_date.$pristine || employmentDetails.submitted">
+                 {{employmentDetails.famMessages.ERROR.M200010}}
                 </small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.sex.$error.required) && (!registration.registrationForm.sex.$pristine) || registration.submitted }">
-                        <label class="item-stacked-label select-box" id="registetion-service-center">
+                        <div class="form-group">
+                            <label class="item-stacked-label select-box" id="registetion-service-center">
               <div class="lebel-head" style="margin-top: 15px;">ORGANIZATION ADDRESS</div>
-                <textarea placeholder=""></textarea>
-                <div class="help-block_cont" data-ng-show="registration.registrationForm.sex.$invalid || registration.submitted">
-                  <small class="help-block inline-error" data-ng-show="registration.registrationForm.sex.$error.required && !registration.registrationForm.sex.$pristine || registration.submitted">
-                   {{registration.famMessages.ERROR.M200013}}
-                  </small>
-              </div>
+                <textarea placeholder="" name="org_address" data-ng-model="userVO.org_address"></textarea>
+              
             </label>
-                    </div>
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
-                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-              <input type="text" placeholder="ORGANIZATION CONTACT" name="fname" data-ng-model="userVO.fname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="text" placeholder="ORGANIZATION CONTACT" name="org_contact" data-ng-model="userVO.org_contact" >
             </label>
-                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
-                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
-                 {{registration.famMessages.ERROR.M200010}}
-                </small>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="item item-input item-floating-label text-fill" id="registetion-input7">
+              <input type="file" placeholder="ATTACH DOCUMENTS" name="doc" data-ng-model="userVO.doc">
+            </label>
+
+                        </div>
+                        <div class="button-set">
+                            <button id="save" class="button button-positive previous">Save</button>
+                            <button id="cancel" class="button button-positive next">Cancel</button>
                         </div>
                     </div>
-                    <div class="form-group" data-ng-class="{ 'has-error': (registration.registrationForm.fname.$error.required) && ( !registration.registrationForm.fname.$pristine) || registration.submitted }">
-                        <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-              <input type="file" placeholder="ATTACH DOCUMENTS" name="fname" data-ng-model="userVO.fname" required>
-            </label>
-                        <div class="help-block_cont" data-ng-show="registration.registrationForm.fname.$invalid ||  registration.submitted">
-                            <small class="help-block inline-error" data-ng-show="registration.registrationForm.fname.$error.required && !registration.registrationForm.fname.$pristine || registration.submitted">
-                 {{registration.famMessages.ERROR.M200010}}
-                </small>
-                        </div>
-                    </div>
-                    <div class="button-set">
-                        <button id="save" class="button button-positive previous">Save</button>
-                        <button id="cancel" class="button button-positive next">Cancel</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </ion-list>
 

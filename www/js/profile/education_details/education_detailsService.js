@@ -25,39 +25,39 @@
         function entryMonth() {
             var Entry_Month = '';
             return Entry_Month = [{
-                    id: "1",
+                    id: "01",
                     optionValue: "January"
                 },
                 {
-                    id: "2",
+                    id: "02",
                     optionValue: "February"
                 },
                 {
-                    id: "3",
+                    id: "03",
                     optionValue: "March"
                 },
                 {
-                    id: "4",
+                    id: "04",
                     optionValue: "April"
                 },
                 {
-                    id: "5",
+                    id: "05",
                     optionValue: "May"
                 },
                 {
-                    id: "6",
+                    id: "06",
                     optionValue: "June"
                 },
                 {
-                    id: "7",
+                    id: "07",
                     optionValue: "July"
                 },
                 {
-                    id: "8",
+                    id: "08",
                     optionValue: "August"
                 },
                 {
-                    id: "9",
+                    id: "09",
                     optionValue: "Setember"
                 },
                 {
@@ -111,8 +111,8 @@
                 .catch(errorHandler);
         }
 
-        function PostEducationDetails(callback) {
-            $http.post('http://fabfamilylife.com/app/setupmobapi/masterdata/getlocation').then(function(response) {
+        function PostEducationDetails(data, callback) {
+            $http.post('http://fabfamilylife.com/app/frontend/mobapi/EducationDetails/addEducationDetails', data).then(function(response) {
                     callback(response);
                 })
                 .catch(errorHandler);

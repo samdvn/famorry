@@ -19,7 +19,10 @@
                 login.formData = data;
                 dataService.getUserData(login.formData, function(response) {
                     if (response && response.success == 'true') {
+                        console.clear();
                         console.log(response);
+                        userDetails.setMemberId(response.member_id);
+                        userDetails.setFamilyId(response.family_id);
                         var token = login.formData.user + ':' + response.token + ':M';
                         userDetails.setUserDetails(token);
                         //testerService.prepreNotifications(response.data.notifications);

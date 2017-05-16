@@ -247,13 +247,13 @@
                 "": {
                     templateUrl: 'templates/profile/employment-details.html',
                     controller: 'employment_detailsCtrl',
-                    controllerAs: 'employment_details'
+                    controllerAs: 'employmentDetails'
                 }
             },
             resolve: {
                 loadScripts: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['js/profile/employment_details/employment_detailsCtrl.js'
-                        //'js/tester/login/loginService.js',
+                    return $ocLazyLoad.load(['js/profile/employment_details/employment_detailsCtrl.js',
+                        'js/profile/employment_details/employment_detailsService.js'
                         //'js/registration/loginDataService.js'
                     ]);
                 }]

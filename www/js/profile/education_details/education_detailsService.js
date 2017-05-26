@@ -18,7 +18,9 @@
             PostEducationDetails: PostEducationDetails,
             entryYear: entryYear,
             entryMonth: entryMonth,
-            passingYear: passingYear
+            passingYear: passingYear,
+            ShowUserQualificationDetails: ShowUserQualificationDetails,
+            DeleteQualificationDetailsSection: DeleteQualificationDetailsSection
 
         };
 
@@ -118,6 +120,19 @@
                 .catch(errorHandler);
         }
 
+        function ShowUserQualificationDetails(data, callback) {
+            $http.get('http://fabfamilylife.com/app/frontend/mobapi/EducationDetails/getEducationDetailListOfMembers', { params: data }).then(function(response) {
+                    callback(response);
+                })
+                .catch(errorHandler);
+        }
+
+        function DeleteQualificationDetailsSection(data, callback) {
+            $http.get('http://fabfamilylife.com/app/frontend/mobapi/EducationDetails/deleteEduDetails', { params: data }).then(function(response) {
+                    callback(response);
+                })
+                .catch(errorHandler);
+        }
 
 
         function successHandler(response) {

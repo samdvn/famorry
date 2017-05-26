@@ -267,14 +267,13 @@
                 "": {
                     templateUrl: 'templates/profile/identity-details.html',
                     controller: 'identity_detailsCtrl',
-                    controllerAs: 'identity_details'
+                    controllerAs: 'identityDetails'
                 }
             },
             resolve: {
                 loadScripts: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['js/profile/identity_details/identity_detailsCtrl.js'
-                        //'js/tester/login/loginService.js',
-                        //'js/registration/loginDataService.js'
+                    return $ocLazyLoad.load(['js/profile/identity_details/identity_detailsCtrl.js',
+                        'js/profile/identity_details/identity_detailsService.js'
                     ]);
                 }]
             }

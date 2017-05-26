@@ -5,10 +5,16 @@
         .module(FAM_MODULE)
         .constant("famMessages", {
             "MESSAGE": {
+                "FAM141": "Honorary position deleted successfully ",
+                "FAM142": "Educatio Details deleted successfully ",
                 "M100001": "No records found",
                 "M100002": "Famorry says",
                 "M100003": "Terms & Condition",
                 "M100004": "DEMO collects personally identifying information and data about individuals, their company, and the companies demographics “personally identifying information and data” including (i) when you provide information to DEMO, such as when you register or sign up for any of our products such as, but not limited to, events, conferences, on-line seminars contests, RSS Feeds, webcasts, and other communications with DEMO; (ii) when you register or sign up on any DEMO site, your information will be known to DEMO; and (iii) from time to time we may add other information that we collect from third party sources to enhance the information that you provided to DEMO.",
+                "M200054": "Are you want to delete the Honorary position?",
+                "M200056": "Are you want to delete the your education details?",
+                "M200072": "Are you want to delete the your identity details?"
+
             },
             "ERROR": {
                 "M200001": "Unable to save data",
@@ -66,18 +72,33 @@
                 "M200052": "This field is required",
                 /* **15-05-17 ****** */
                 /* **16-05-17 ****** */
-                "M200053": "This field is required"
+                "M200053": "This field is required",
+                "M200055": "Something wrong, please try again later",
+                "M200057": "please enter a value between 0 and 100",
+                "M200058": "please enter a value between 0 and 10",
+                "M200059": "This field is required",
+                "M200060": "This field is required",
+                "M200061": "This field is required",
+                "M200062": "This field is required",
+                "M200063": "This field is required",
+                "M200064": "This field is required",
+                "M200065": "This field is required",
+                "M200066": "This field is required",
+                "M200067": "This field is required",
+                "M200068": "This field is required",
+                "M200069": "This field is required",
+                "M200070": "This field is required",
+                "M200071": "End date must be on or after start date"
+                    // "M200059": "Something wrong, please try again later",
+                    // "M200060": "Something wrong, please try again later"
                     /* **16-05-17 ****** */
-
-
-
             },
             "SUCCESS": {
-                "M300001": "Data saved successfully.",
-                "M300002": "Data deleted successfully."
+                "M300001": "Record saved successfully.",
+                "M300002": "Record deleted successfully."
             },
             "WARNING": {
-                "M400001": ""
+                "M400001": "work-in progress"
             },
             "CONFIRM": {
                 "M500001": "Are you sure you want to cancel?",

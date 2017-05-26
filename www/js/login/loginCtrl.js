@@ -24,7 +24,10 @@
                         userDetails.setMemberId(response.member_id);
                         userDetails.setFamilyId(response.family_id);
                         var token = login.formData.user + ':' + response.token + ':M';
-                        userDetails.setUserDetails(token);
+
+                        userDetails.setUserId(response.user_id);
+                        //userDetails.setUserDetails(token);
+                        //userDetails.setUserInfo(response);
                         //testerService.prepreNotifications(response.data.notifications);
                         $state.go(famConstants.STATE_USER.HOME);
                     } else {

@@ -227,13 +227,13 @@
                 "": {
                     templateUrl: 'templates/profile/education-details.html',
                     controller: 'education_detailsCtrl',
-                    controllerAs: 'education_details'
+                    controllerAs: 'educationDetails'
                 }
             },
             resolve: {
                 loadScripts: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['js/profile/education_details/education_detailsCtrl.js'
-                        //'js/tester/login/loginService.js',
+                    return $ocLazyLoad.load(['js/profile/education_details/education_detailsCtrl.js',
+                        'js/profile/education_details/education_detailsService.js'
                         //'js/registration/loginDataService.js'
                     ]);
                 }]
@@ -247,13 +247,13 @@
                 "": {
                     templateUrl: 'templates/profile/employment-details.html',
                     controller: 'employment_detailsCtrl',
-                    controllerAs: 'employment_details'
+                    controllerAs: 'employmentDetails'
                 }
             },
             resolve: {
                 loadScripts: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['js/profile/employment_details/employment_detailsCtrl.js'
-                        //'js/tester/login/loginService.js',
+                    return $ocLazyLoad.load(['js/profile/employment_details/employment_detailsCtrl.js',
+                        'js/profile/employment_details/employment_detailsService.js'
                         //'js/registration/loginDataService.js'
                     ]);
                 }]
@@ -267,14 +267,13 @@
                 "": {
                     templateUrl: 'templates/profile/identity-details.html',
                     controller: 'identity_detailsCtrl',
-                    controllerAs: 'identity_details'
+                    controllerAs: 'identityDetails'
                 }
             },
             resolve: {
                 loadScripts: ['$ocLazyLoad', function($ocLazyLoad) {
-                    return $ocLazyLoad.load(['js/profile/identity_details/identity_detailsCtrl.js'
-                        //'js/tester/login/loginService.js',
-                        //'js/registration/loginDataService.js'
+                    return $ocLazyLoad.load(['js/profile/identity_details/identity_detailsCtrl.js',
+                        'js/profile/identity_details/identity_detailsService.js'
                     ]);
                 }]
             }

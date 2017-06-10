@@ -59,7 +59,7 @@
                             </label>
                             <div class="help-block_cont" data-ng-show="employmentDetails.employment.org_name.$invalid &&  employmentDetails.submitted">
                                 <small class="help-block inline-error" data-ng-show="employmentDetails.employment.org_name.$error.required && !employmentDetails.employment.org_name.$pristine || employmentDetails.submitted">
-                                     {{employmentDetails.famMessages.ERROR.M200010}}
+                                     {{employmentDetails.famMessages.ERROR.M200070}}
                                 </small>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                             </label>
                             <div class="help-block_cont" data-ng-show="employmentDetails.employment.designation.$invalid && employmentDetails.submitted">
                                 <small class="help-block inline-error" data-ng-show="employmentDetails.employment.designation.$error.required && !employmentDetails.employment.designation.$pristine || employmentDetails.submitted">
-                                     {{employmentDetails.famMessages.ERROR.M200010}}
+                                     {{employmentDetails.famMessages.ERROR.M200070}}
                                 </small>
                             </div>
                         </div>
@@ -77,7 +77,8 @@
 
                             <datepicker date-format="dd-MMMM-yyyy" selector="form-control">
                                 <div class="input-group">
-                                    <input name="stratingdate" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" data-ng-model="userVO.stratingdate" class="form-control" placeholder="Choose start date" required/>
+                                    <input name="stratingdate" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" ng-blur="employmentDetails.errorCheck(userVO)" data-ng-model="userVO.stratingdate" class="form-control" placeholder="Choose start date"
+                                        required/>
                                     <span class="input-group-addon" style="cursor: pointer">
                                         <i class="fa fa-lg fa-calendar"></i>
                                     </span>
@@ -85,18 +86,19 @@
                             </datepicker>
                             <div class="help-block_cont" data-ng-show="employmentDetails.employment.stratingdate.$invalid &&  employmentDetails.submitted">
                                 <small class="help-block inline-error" data-ng-show="employmentDetails.employment.stratingdate.$error.required && !employmentDetails.employment.stratingdate.$pristine || employmentDetails.submitted">
-                                        {{employmentDetails.famMessages.ERROR.M200010}}
+                                        {{employmentDetails.famMessages.ERROR.M200070}}
                                 </small>
                             </div>
-                            <small class="help-block inline-error" data-ng-show="employmentDetails.endDateCheck==2">
+                            <small class="help-block inline-error" data-ng-show="employmentDetails.startDateCheck==3">
                                         <!--{{employmentDetails.famMessages.ERROR.M200010}}-->
-                                        not future date{{employmentDetails.endDateCheck}}
+                                      {{employmentDetails.famMessages.ERROR.M200072}}
                                 </small>
                         </div>
                         <div class="form-group" data-ng-class="{ 'has-error': (employmentDetails.employment.e_date.$error.required) && ( !employmentDetails.employment.e_date.$pristine) && employmentDetails.submitted }">
                             <datepicker date-format="dd-MMMM-yyyy" selector="form-control">
                                 <div class="input-group">
-                                    <input name="e_date" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" data-ng-model="userVO.e_date" class="form-control" placeholder="Choose end date" required/>
+                                    <input name="e_date" style="border: 0;  border-bottom: solid 1px #4b6c76; color: #fff; background: transparent; margin-bottom: 5px;" ng-blur="employmentDetails.errorCheck(userVO)" data-ng-model="userVO.e_date" class="form-control" placeholder="Choose end date"
+                                    />
                                     <span class="input-group-addon" style="cursor: pointer">
                                         <i class="fa fa-lg fa-calendar"></i>
                                     </span>
@@ -104,19 +106,19 @@
                             </datepicker>
                             <div class="help-block_cont" data-ng-show="employmentDetails.employment.e_date.$invalid &&  employmentDetails.submitted">
                                 <small class="help-block inline-error" data-ng-show="employmentDetails.employment.e_date.$error.required && !employmentDetails.employment.e_date.$pristine || employmentDetails.submitted">
-                                    {{employmentDetails.famMessages.ERROR.M200010}}
+                                    {{employmentDetails.famMessages.ERROR.M200070}}
                                 </small>
 
 
                             </div>
                             <small class="help-block inline-error" data-ng-show="employmentDetails.endDateCheck==2">
                                         <!--{{employmentDetails.famMessages.ERROR.M200010}}-->
-                                        not future date{{employmentDetails.endDateCheck}}
+                                       {{employmentDetails.famMessages.ERROR.M200072}}
                                 </small>
                             <small class="help-block inline-error" data-ng-show="employmentDetails.endDateCheck==1">
                                         <!--{{employmentDetails.famMessages.ERROR.M200010}}-->
                                       
-                                         end date not less than start date{{employmentDetails.endDateCheck}}
+                                        {{employmentDetails.famMessages.ERROR.M200071}}
                                 </small>
                         </div>
                         <div class="form-group">
@@ -128,8 +130,14 @@
                         </div>
                         <div class="form-group">
                             <label class="item item-input item-floating-label text-fill" id="registetion-input7">
-                                <input type="number" placeholder="ORGANIZATION CONTACT" name="org_contact" data-ng-model="userVO.org_contact" >
+                                <input type="text" placeholder="ORGANIZATION CONTACT" name="org_contact" data-ng-model="userVO.org_contact" ng-pattern="/^[0-9]{10}$/" >
                             </label>
+
+                            <small class="help-block inline-error" data-ng-show="employmentDetails.endDateCheck==1">
+                                        <!--{{employmentDetails.famMessages.ERROR.M200010}}-->
+                                      
+                                        {{employmentDetails.famMessages.ERROR.M200018}}
+                                </small>
 
                         </div>
                         <div class="form-group">

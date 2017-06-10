@@ -80,7 +80,38 @@
         var userInfo = userDetails.getUserInfo();
         var param = { familyID: familyId, memberID: memberId };
 
+        employmentDetails.errorCheck = function(data) {
+            var today = new Date().getTime();
+            var issuedate = new Date(data.stratingdate).getTime();
+            var end_date = new Date(data.e_date).getTime();
 
+
+            if (end_date <= issuedate) {
+                employmentDetails.endDateCheck = 1;
+                return false;
+            } else {
+                employmentDetails.endDateCheck = 0;
+            }
+
+            if (issuedate > today) {
+                // employmentDetails.endDateCheck = 2;
+                if (end_date > today) {
+                    employmentDetails.endDateCheck = 2;
+                    return false;
+                } else {
+                    employmentDetails.startDateCheck = 3;
+                    return false;
+                }
+            } else {
+                employmentDetails.startDateCheck = 0;
+            }
+            if (end_date > today) {
+                employmentDetails.endDateCheck = 2;
+                return false;
+            } else {
+                employmentDetails.endDateCheck = 0;
+            }
+        };
 
         dataService.getEmploymetData(param, function(response) {
             console.log('get')

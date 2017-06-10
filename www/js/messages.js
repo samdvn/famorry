@@ -88,7 +88,8 @@
                 "M200068": "This field is required",
                 "M200069": "This field is required",
                 "M200070": "This field is required",
-                "M200071": "End date must be on or after start date"
+                "M200071": " Date should not be equal of less than start date",
+                "M200072": " Date cannot be future date"
                     // "M200059": "Something wrong, please try again later",
                     // "M200060": "Something wrong, please try again later"
                     /* **16-05-17 ****** */
